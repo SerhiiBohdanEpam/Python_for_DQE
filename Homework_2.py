@@ -15,7 +15,7 @@ for d in dicts:
         d[random.choice(string.ascii_lowercase)] = random.randint(0, 100)
 
 print(dicts)
-# The second task
+# The second task:
 
 # Initialize an empty dictionary to hold the final result
 final_dict = {}
