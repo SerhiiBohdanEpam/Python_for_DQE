@@ -1,0 +1,28 @@
+News: 
+ This is first news. 
+ City:London. 
+ Published on: 2024-02-23.
+
+Ad: 
+ Black friday. 
+ Expires on: 2024-02-27. 
+ Days left: 3.
+
+New product: Fender. 
+ Price: 250$. 
+ Received on: 2024-02-28.
+
+News: 
+ Second news. 
+ City:New York. 
+ Published on: 2024-02-23.
+
+Ad: 
+ New prices. 
+ Expires on: 2024-02-28. 
+ Days left: 4.
+
+New product: Gibson. 
+ Price: 350$. 
+ Received on: 2024-02-25.
+
