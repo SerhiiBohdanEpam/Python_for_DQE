@@ -39,7 +39,7 @@ def generate_dicts(min_dicts=2, max_dicts=10, min_keys=1, max_keys=10, min_value
 
 
 # Test the function
-print(generate_dicts(3, 5, 0, 3, 0, 5))
+# print(generate_dicts(3, 5, 0, 3, 0, 5))
 
 
 # The second task from the module 2
@@ -77,7 +77,7 @@ def merge_dicts(dicts_to_work):
 
 # Test the function
 dicts = generate_dicts(2, 10, 1, 10, 0, 100)
-print(merge_dicts(dicts))
+# print(merge_dicts(dicts))
 
 
 # The task from Module 3
@@ -92,7 +92,6 @@ def normalize_sentences(text_to_correct):
     """
     # Split the text into lines using '\n' as a separator
     lines = text_to_correct.split('\n')
-    print(lines)
     # Initialize an empty list to hold the normalized sentences
     normalized_lines = []
 
@@ -123,7 +122,7 @@ it iZ misspeLLing here. fix“iZ” with correct “is”, but ONLY when it Iz a
 last iz TO calculate nuMber OF Whitespace characteRS in this Tex. caREFULL, not only Spaces, but ALL whitespaces. I got 87.
 """
 
-print(normalize_sentences(text))
+# print(normalize_sentences(text))
 
 
 # A sentence with the last words
@@ -152,7 +151,7 @@ def add_sentence_with_last_words(text_to_work):
 
 
 # Test the function
-print(add_sentence_with_last_words(text))
+# print(add_sentence_with_last_words(text))
 
 
 # 3 correct "IZ"

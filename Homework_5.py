@@ -1,83 +1,85 @@
-class A:
-    def __init__(self, default_x):
-        self.x = default_x
-
-    def my_name(self):
-        print(f'My name is class A and {self.x}')
-
-    def test_func(self):
-        self.my_name()
+import datetime
 
 
-# a = A(12)
-# a.my_name()
-# a.test_func()
-# print(a.x)
+# Defines the News type
+class News:
+    # Initializes News object with its attributes
+    def __init__(self, text=None, city=None):
+        self.text = text
+        self.city = city
+        self.publish_date = datetime.datetime.now()
 
-class Publication:
-    def __init__(self, name='Test name'):
+    # Converts object to string format
+    def __str__(self):
+        return f'News: \n {self.text}. \n City:{self.city}. \n Published on: {self.publish_date.strftime("%Y-%m-%d")}.\n\n'
+
+    # Method to create and add news object
+    def add(self):
+        self.text = input("Enter news text: ")
+        self.city = input("Enter news city: ")
+        self.publish_date = datetime.datetime.now()  # get current date
+        return self
+
+
+# Defines the PrivateAdd type:
+class PrivateAd:
+    # Initializes PrivateAd object with its attributes
+    def __init__(self, text=None, expiration_date=None):
+        self.days_left = None
+        self.text = text
+        self.expiration_date = expiration_date
+
+    # Converts object to string format
+    def __str__(self):
+        return f'Ad: \n {self.text}. \n Expires on: {self.expiration_date.strftime("%Y-%m-%d")}. \n Days left: {(self.expiration_date - datetime.datetime.now()).days}.\n\n'
+
+    # Method to create and add PrivateAd object
+    def add(self):
+        self.text = input("Enter ad text: ")
+        self.expiration_date = datetime.datetime.strptime(input("Enter expiration date (YYYY-MM-DD): "), '%Y-%m-%d')
+        self.days_left = (self.expiration_date - datetime.datetime.now()).days
+        return self
+
+
+# Defines the NewProduct type
+class NewProduct:
+    # Initializes NewProduct object with its attributes
+    def __init__(self, name=None, price=None, receipt_date=None):
         self.name = name
+        self.price = price
+        self.receipt_date = receipt_date
 
-    def publish_date(self):
-        print(self.__calculate_date())
+    # Converts object to string format
+    def __str__(self):
+        return f'New product: {self.name}. \n Price: {self.price}. \n Received on: {self.receipt_date.strftime("%Y-%m-%d")}.\n\n'
 
-    def __calculate_date(self):
-        return 'date'
-
-    def publish(self):
-        pass
-
-pub = Publication('Today news')
-# print(pub.name)
-
-
-class Video:
-    def __init__(self, quality='720'):
-        self.quality = quality
-
-    def show_quality(self):
-        print(f'Quality is {self.quality}')
-
-    def publish(self):
-        self.__set_quality()
-        self.__upload_youtube()
-        self.__add_subtitles
+    # Method to create and add NewProduct object
+    def add(self):
+        self.name = input("Enter product name: ")
+        self.price = input("Enter product price: ")
+        self.receipt_date = datetime.datetime.strptime(input("Received date in format (YYYY-MM-DD): "), '%Y-%m-%d')
+        return self
 
 
-class Advertising(Publication):
-    def __init__(self, name, customer):
-        Publication.__init__(self, name=name)
-        self.customer = customer
-    def who_is_customer(self):
-        print(f'Customer is {self.customer}')
+# Defines the Feed application
+class Feed:
+    # Initializes an empty news_feed
+    def __init__(self):
+        self.news_feed = []
 
-    def publish(self):
-        self.__set_customer()
-        self.__set_date_until()
+    # Adds a record to the news_feed
+    def add_record(self, record):
+        self.news_feed.append(record.add())
 
-
-adv = Advertising('Ad_name', 'Google')
-# print(adv.name)
-# adv.who_is_customer()
-# adv.publish_date()
-
-class Movie(Publication, Video):
-    def __init__(self, name, quality):
-        Publication.__init__(self, name=name)
-        Video.__init__(self, quality=quality)
-        # super().__init__()
-        self.director = 'Cameron'
-
-    def publish(self):
-        self.__add_to_site()
+    # Saves the news_feed as a string to a text file
+    def publish(self, filename):
+        with open(filename, 'a') as file:
+            for record in self.news_feed:
+                file.write(str(record))
 
 
-movie = Movie('Terminator', 1080)
-movie.show_quality()
-print(movie.name)
-movie.publish_date()
-print(movie.director)
-
-movie.publish()
-adv.publish()
-pub.publish()
+content = Feed()
+content.add_record(News())
+content.add_record(PrivateAd())
+content.add_record(NewProduct())
+content.publish("my_news_feed.txt")
