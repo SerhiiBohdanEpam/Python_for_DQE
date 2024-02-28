@@ -2,6 +2,8 @@ import datetime
 import os
 # import func for correct text
 from Homework_4 import normalize_sentences as correcter
+# import func for count
+import Homework_7
 
 
 # define the function to add info from a file
@@ -20,7 +22,7 @@ class News:
 
     # Converts object to string format
     def __str__(self):
-        return f'News: \n {self.text}. \n City: {self.city}. \n Published on: {self.publish_date.strftime("%Y-%m-%d")}.\n\n'
+        return f'News: \n {self.text}. \n City: {self.city} \n Published on: {self.publish_date.strftime("%Y-%m-%d")}.\n\n'
 
     # Method to create and add news object
     def add(self):
@@ -140,3 +142,6 @@ content.add_record(News())
 content.add_record(PrivateAd())
 content.add_record(NewProduct())
 content.publish("my_content_feed.txt")
+
+Homework_7.read_and_create_word_counter("my_content_feed.txt")
+Homework_7.letter_analizy("my_content_feed.txt")
