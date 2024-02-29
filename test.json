@@ -1,0 +1,16 @@
+ [{
+    "type": "news",
+    "text":  "news content",
+    "city": "london"
+  },
+  {
+    "type": "ad",
+    "text": "ad content",
+    "date": "2024-03-05"
+  },
+  {
+    "type": "product",
+    "name": "product name",
+    "price": "250$",
+    "date": "2024-03-05"
+  }]
