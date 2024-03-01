@@ -1,0 +1,15 @@
+<content>
+<type name="news">
+    <text>News content</text>
+    <city>London</city>
+</type>
+<type name="ad">
+    <text>Ad content</text>
+    <date>2024-03-05</date>
+</type>
+<type name="product">
+    <name>Product name</name>
+    <price>250$</price>
+    <date>2024-03-05</date>
+</type>
+</content>

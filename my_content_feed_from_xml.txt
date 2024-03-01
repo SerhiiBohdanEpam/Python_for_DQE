@@ -1,0 +1,15 @@
+News: 
+ News content. 
+ City: London 
+ Published on: 2024-03-01.
+
+Ad: 
+ Ad content. 
+ Expires on: 2024-03-05. 
+ Days left: 3.
+
+New product: 
+ Product name. 
+ Price: 250$. 
+ Received on: 2024-03-05.
+
